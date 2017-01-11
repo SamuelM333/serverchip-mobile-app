@@ -1,0 +1,53 @@
+// Import the theme’s variables
+@import '../node_modules/nativescript-theme-core/scss/dark';
+
+// Import global colors
+@import "colors";
+
+// Customize any of the theme’s variables here, for instance $btn-color: red;
+
+$btn-color: $green;
+//$btn-color-inverse: $white;
+//$btn-color-secondary: #01a0ec;
+
+$primary: red;
+$secondary: red;
+$disabled: $background-white;
+$accent: $green;
+$error: #d50000;
+
+// Import the theme’s main ruleset
+@import '../node_modules/nativescript-theme-core/scss/index';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+Page {
+  background-color: $background-white;
+}
+
+.p {
+  padding: 10px;
+}
+
+.m {
+  padding: 10px;
+}
+
+ActionBar {
+  background-color: $blue-gray;
+  color: white;
+}
+
+RadSideDrawer {
+  padding: 0;
+  margin: 0;
+}
+
+.sideStackLayout {
+  background-color: $blue-gray;
+}
+
+.sideStackLayout > Label {
+  color: white;
+}
