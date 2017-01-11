@@ -1,22 +1,20 @@
-<ActionBar title="Serverchip"></ActionBar>
-<RadSideDrawer tkExampleTitle tkToggleNavButton>
+<ActionBar title="Serverchip">
+    <NavigationButton icon="res://ic_menu_black_24dp" (tap)="openDrawer()"></NavigationButton>
+</ActionBar>
+<RadSideDrawer tkExampleTitle tkToggleNavButton [showOverNavigation]="true">
     <StackLayout tkDrawerContent class="sideStackLayout">
         <StackLayout class="sideTitleStackLayout">
-            <Label text="Navigation Menu"></Label>
+            <Label class="side-title" text="Navigation Menu"  ></Label>
         </StackLayout>
         <StackLayout class="sideStackLayout">
-            <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
-            <Label text="Social" class="sideLabel"></Label>
-            <Label text="Promotions" class="sideLabel"></Label>
-            <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
-            <Label text="Important" class="sideLabel"></Label>
-            <Label text="Starred" class="sideLabel"></Label>
-            <Label text="Sent Mail" class="sideLabel"></Label>
-            <Label text="Drafts" class="sideLabel"></Label>
+            <Label class="side-label sideLightGrayLabel" text="Primary" ></Label>
+            <Label class="side-label" text="Social" ></Label>
+            <Label class="side-label" text="Promotions" ></Label>
+            <Label class="side-label sideLightGrayLabel" text="Labels" ></Label>
         </StackLayout>
     </StackLayout>
     <StackLayout tkMainContent>
-        <Label text="mainContentText" textWrap="true" class="drawerContentText"></Label>
-        <Button class="btn btn-primary" text="OPEN DRAWER" (tap)=openDrawer()></Button>
+        <!--<Label text="mainContentText" textWrap="true" class="drawerContentText"></Label>-->
+        <!--<Button class="btn btn-primary" text="OPEN DRAWER" (tap)=openDrawer()></Button>-->
     </StackLayout>
 </RadSideDrawer>

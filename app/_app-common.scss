@@ -1,20 +1,11 @@
 // Import the theme’s variables
 @import '../node_modules/nativescript-theme-core/scss/dark';
-
 // Import global colors
 @import "colors";
 
 // Customize any of the theme’s variables here, for instance $btn-color: red;
-
 $btn-color: $green;
-//$btn-color-inverse: $white;
-//$btn-color-secondary: #01a0ec;
-
-$primary: red;
-$secondary: red;
-$disabled: $background-white;
-$accent: $green;
-$error: #d50000;
+$primary: $blue-gray-lighten;
 
 // Import the theme’s main ruleset
 @import '../node_modules/nativescript-theme-core/scss/index';
@@ -22,21 +13,17 @@ $error: #d50000;
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 
+.mdi {
+  font-family: "Material Icons", "MaterialIcons-Regular";
+}
+
 Page {
   background-color: $background-white;
 }
 
-.p {
-  padding: 10px;
-}
-
-.m {
-  padding: 10px;
-}
-
 ActionBar {
-  background-color: $blue-gray;
-  color: white;
+  background-color: $header;
+  color: $text-color;
 }
 
 RadSideDrawer {
@@ -48,6 +35,11 @@ RadSideDrawer {
   background-color: $blue-gray;
 }
 
-.sideStackLayout > Label {
+.side-title {
+  color: white;
+  font-size: 20;
+}
+
+.side-label {
   color: white;
 }
