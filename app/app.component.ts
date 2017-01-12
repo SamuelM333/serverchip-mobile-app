@@ -11,6 +11,7 @@ export class AppComponent implements AfterViewInit {
     @ViewChild(RadSideDrawerComponent)
     public drawerComponent: RadSideDrawerComponent;
     private drawer: SideDrawerType;
+    public title = "Tasks";
     public pages = [
         { name: " Tasks", icon: String.fromCharCode(0xf0ae), route: "/tasks" },
         { name: " Reports", icon: String.fromCharCode(0xf0f6), route: "/reports" },
@@ -38,6 +39,7 @@ export class AppComponent implements AfterViewInit {
         console.log(args.index);
         console.log(this.pages[args.index].route);
         this.routerExtensions.navigate([this.pages[args.index].route]);
+        this.title = this.pages[args.index].name;
         this.drawer.closeDrawer();
 
     }

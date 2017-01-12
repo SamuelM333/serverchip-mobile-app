@@ -5,7 +5,6 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { SIDEDRAWER_DIRECTIVES } from "nativescript-telerik-ui/sidedrawer/angular";
 import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
 import { routes } from './app.routes';
-
 import { AppComponent } from "./app.component";
 import { TasksComponent } from './tasks/tasks.component';
 import { ReportsComponent } from './reports/reports.component';
