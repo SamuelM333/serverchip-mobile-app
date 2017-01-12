@@ -15,11 +15,11 @@ export class AppComponent implements AfterViewInit {
     constructor(private _changeDetectionRef: ChangeDetectorRef,
                 private fonticon: TNSFontIconService) {
         // List all pages here
-        this.pages = [
-            { name: "Home" },
-            { name: "About" },
-            { name: "Contact" }
-        ];
+        // this.pages = [
+        //     { name: "Home" },
+        //     { name: "About" },
+        //     { name: "Contact" }
+        // ];
     }
 
     ngAfterViewInit() {

@@ -1,20 +1,18 @@
 <ActionBar title="Serverchip">
     <NavigationButton icon="res://ic_menu_black_24dp" (tap)="openDrawer()"></NavigationButton>
 </ActionBar>
-<RadSideDrawer tkExampleTitle tkToggleNavButton [showOverNavigation]="true">
+<RadSideDrawer tkExampleTitle tkToggleNavButton>
     <StackLayout tkDrawerContent class="sideStackLayout">
         <StackLayout class="sideTitleStackLayout">
-            <Label class="side-title" text="Navigation Menu"  ></Label>
+            <!--<Label class="side-title" text="Navigation Menu"></Label>-->
         </StackLayout>
         <StackLayout class="sideStackLayout">
-            <Label class="side-label sideLightGrayLabel" text="Primary" ></Label>
-            <Label class="side-label" text="Social" ></Label>
-            <Label class="side-label" text="Promotions" ></Label>
-            <Label class="side-label sideLightGrayLabel" text="Labels" ></Label>
+            <Label class="fa side-label sideLightGrayLabel" [nsRouterLink]="['/tasks']" text="&#xf0ae; Tasks"></Label>
+            <Label class="fa side-label sideLightGrayLabel" [nsRouterLink]="['/reports']" text="&#xf0f6; Reports"></Label>
+            <Label class="fa side-label sideLightGrayLabel" [nsRouterLink]="['/microchips']" text="&#xf2db; Microchips"></Label>
         </StackLayout>
     </StackLayout>
     <StackLayout tkMainContent>
-        <!--<Label text="mainContentText" textWrap="true" class="drawerContentText"></Label>-->
-        <!--<Button class="btn btn-primary" text="OPEN DRAWER" (tap)=openDrawer()></Button>-->
+        <page-router-outlet></page-router-outlet>
     </StackLayout>
 </RadSideDrawer>

@@ -17,6 +17,10 @@ $primary: $blue-gray-lighten;
   font-family: "Material Icons", "MaterialIcons-Regular";
 }
 
+.fa {
+  font-family: "FontAwesome";
+}
+
 Page {
   background-color: $background-white;
 }
@@ -35,11 +39,18 @@ RadSideDrawer {
   background-color: $blue-gray;
 }
 
+.sideTitleStackLayout{
+  margin-bottom: 20px;
+
+}
+
 .side-title {
   color: white;
   font-size: 20;
 }
 
 .side-label {
+  font-size: 20;
   color: white;
+  padding: 7px 0 15px 25px;
 }
