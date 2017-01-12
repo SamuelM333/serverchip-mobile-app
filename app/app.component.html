@@ -1,5 +1,5 @@
 <ActionBar title="Serverchip">
-    <NavigationButton icon="res://ic_menu_black_24dp" (tap)="openDrawer()"></NavigationButton>
+    <NavigationButton icon="res://ic_menu_black_24dp" (tap)="toggleDrawer()"></NavigationButton>
 </ActionBar>
 <RadSideDrawer tkExampleTitle tkToggleNavButton>
     <StackLayout tkDrawerContent class="sideStackLayout">
@@ -7,12 +7,20 @@
             <!--<Label class="side-title" text="Navigation Menu"></Label>-->
         </StackLayout>
         <StackLayout class="sideStackLayout">
-            <Label class="fa side-label sideLightGrayLabel" [nsRouterLink]="['/tasks']" text="&#xf0ae; Tasks"></Label>
-            <Label class="fa side-label sideLightGrayLabel" [nsRouterLink]="['/reports']" text="&#xf0f6; Reports"></Label>
-            <Label class="fa side-label sideLightGrayLabel" [nsRouterLink]="['/microchips']" text="&#xf2db; Microchips"></Label>
+            <GridLayout>
+                <ListView [items]="pages" (itemTap)="onItemTap($event)">
+                    <template let-page="item">
+                        <StackLayout orientation="horizontal">
+                            <Label class="fa side-label sideLightGrayLabel"
+                                   [text]="page.icon + page.name">
+                            </Label>
+                        </StackLayout>
+                    </template>
+                </ListView>
+            </GridLayout>
         </StackLayout>
     </StackLayout>
     <StackLayout tkMainContent>
-        <page-router-outlet></page-router-outlet>
+        <router-outlet></router-outlet>
     </StackLayout>
 </RadSideDrawer>

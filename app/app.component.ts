@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, ViewChild, ChangeDetectorRef } from "@angular/core";
 import { RadSideDrawerComponent, SideDrawerType } from "nativescript-telerik-ui/sidedrawer/angular";
 import { TNSFontIconService } from 'nativescript-ng2-fonticon';
+import { RouterExtensions } from "nativescript-angular";
 
 @Component({
     selector: "my-app",
@@ -10,16 +11,17 @@ export class AppComponent implements AfterViewInit {
     @ViewChild(RadSideDrawerComponent)
     public drawerComponent: RadSideDrawerComponent;
     private drawer: SideDrawerType;
-    public pages: Array<Object>;
+    public pages = [
+        { name: " Tasks", icon: String.fromCharCode(0xf0ae), route: "/tasks" },
+        { name: " Reports", icon: String.fromCharCode(0xf0f6), route: "/reports" },
+        { name: " Microchips", icon: String.fromCharCode(0xf2db), route: "/microchips" }
+    ];
+
 
     constructor(private _changeDetectionRef: ChangeDetectorRef,
-                private fonticon: TNSFontIconService) {
-        // List all pages here
-        // this.pages = [
-        //     { name: "Home" },
-        //     { name: "About" },
-        //     { name: "Contact" }
-        // ];
+                private fonticon: TNSFontIconService,
+                private routerExtensions: RouterExtensions) {
+
     }
 
     ngAfterViewInit() {
@@ -27,7 +29,16 @@ export class AppComponent implements AfterViewInit {
         this._changeDetectionRef.detectChanges();
     }
 
-    public openDrawer() {
+    public toggleDrawer() {
         this.drawer.toggleDrawerState();
+    }
+
+    public onItemTap(args) {
+        console.log("------------------------ ItemTapped");
+        console.log(args.index);
+        console.log(this.pages[args.index].route);
+        this.routerExtensions.navigate([this.pages[args.index].route]);
+        this.drawer.closeDrawer();
+
     }
 }
