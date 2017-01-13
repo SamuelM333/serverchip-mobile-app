@@ -1,10 +1,9 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
-import { ObservableArray } from "data/observable-array";
 import { registerElement } from "nativescript-angular/element-registry";
 
 registerElement("CardView", () => require("nativescript-cardview").CardView);
 
-const app = require('application');
+// const app = require('application');
 
 @Component({
     selector: "tasks",
@@ -12,12 +11,12 @@ const app = require('application');
     styleUrls: ["./tasks/tasks.component.css"]
 })
 export class TasksComponent {
-    public countries: Array<any>;
-    @ViewChild("CardView") CardView: ElementRef;
+    public items: Array<any>;
+    // @ViewChild("CardView") CardView: ElementRef;
 
 
     constructor() {
-        this.countries = [
+        this.items = [
             { name: "kek1", continent: "wut" },
             { name: "kek2", continent: "wut" },
             { name: "kek3", continent: "wut" },
@@ -35,7 +34,7 @@ export class TasksComponent {
 
     onTap(args) {
         console.log(args.index);
-        console.log(this.countries[args.index].name);
+        console.log(this.items[args.index].name);
     }
 
     // onBack() {

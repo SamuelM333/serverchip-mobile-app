@@ -1,8 +1,8 @@
-<ListView class="list-group" height="100%" [items]="countries" (itemTap)="onTap($event)" separatorColor="white">
+<ListView class="list-group" height="100%" [items]="items" (itemTap)="onTap($event)" separatorColor="white">
     <template let-country="item">
         <CardView #item class="cardStyle" margin="10" elevation="20" radius="5">
             <StackLayout>
-                <Image stretch="aspectFill" src="https://placeholdit.imgix.net/~text?txtsize=45&txt=480%C3%97250&w=480&h=250"></Image>
+                <Image stretch="aspectFill" src="~/images/placeholder.png"></Image>
                 <Label class="cardLabel cardTitle" textWrap="true" text="Title goes here"></Label>
                 <Label class="cardLabel cardSubtitle" text="Subtitle here"></Label>
                 <!--<Label class="cardLabel"  verticalAlignment="center"-->
