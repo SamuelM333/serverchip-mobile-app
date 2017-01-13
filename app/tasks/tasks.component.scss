@@ -1,1 +1,19 @@
+@import "colors";
 
+.cardLabel {
+  margin-left: 20px;
+  color: white;
+}
+
+.cardTitle  {
+  margin-top: 5px;
+  font-size: 20;
+}
+
+.cardStyle {
+  background-color: $blue-gray;
+}
+
+.no-shadow {
+
+}

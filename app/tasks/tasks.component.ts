@@ -8,7 +8,8 @@ const app = require('application');
 
 @Component({
     selector: "tasks",
-    templateUrl: "./tasks/tasks.component.html"
+    templateUrl: "./tasks/tasks.component.html",
+    styleUrls: ["./tasks/tasks.component.css"]
 })
 export class TasksComponent {
     public countries: Array<any>;
@@ -19,6 +20,10 @@ export class TasksComponent {
         this.countries = [
             { name: "kek1", continent: "wut" },
             { name: "kek2", continent: "wut" },
+            { name: "kek3", continent: "wut" },
+            { name: "kek3", continent: "wut" },
+            { name: "kek3", continent: "wut" },
+            { name: "kek3", continent: "wut" },
             { name: "kek3", continent: "wut" },
         ];
         // const app = require('application');

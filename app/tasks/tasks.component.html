@@ -1,18 +1,18 @@
-<!--<Label text="tasks"></Label>-->
-
 <ListView class="list-group" height="100%" [items]="countries" (itemTap)="onTap($event)" separatorColor="white">
     <template let-country="item">
         <CardView #item class="cardStyle" margin="10" elevation="20" radius="5">
-            <GridLayout>
-                <Image stretch="aspectFill" src="https://www.google.com/images/errors/logo_sm_2.png"></Image>
+            <StackLayout>
+                <Image stretch="aspectFill" src="https://placeholdit.imgix.net/~text?txtsize=45&txt=480%C3%97250&w=480&h=250"></Image>
+                <Label class="cardLabel cardTitle" textWrap="true" text="Title goes here"></Label>
+                <Label class="cardLabel cardSubtitle" text="Subtitle here"></Label>
                 <!--<Label class="cardLabel"  verticalAlignment="center"-->
                 <!--horizontalAlignment="center"></Label>-->
                 <GridLayout columns="*, *, *" orientation="horizontal" verticalAlignment="bottom" width="100%">
-                    <Button col="0" [text]="country.name"></Button>
-                    <Button col="1" [text]="country.name"></Button>
-                    <Button col="2" [text]="country.name"></Button>
+                    <Button col="1" class="btn btn-primary" text="Action 1"></Button>
+                    <Button col="2" class="btn btn-primary" text="Action 2"></Button>
+                    <!--<Button col="2" [text]="country.name"></Button>-->
                 </GridLayout>
-            </GridLayout>
+            </StackLayout>
         </CardView>
     </template>
 </ListView>
