@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from "@angular/core";
+import { Component } from "@angular/core";
 import { registerElement } from "nativescript-angular/element-registry";
 
 registerElement("CardView", () => require("nativescript-cardview").CardView);
@@ -12,8 +12,6 @@ registerElement("CardView", () => require("nativescript-cardview").CardView);
 })
 export class TasksComponent {
     public items: Array<any>;
-    // @ViewChild("CardView") CardView: ElementRef;
-
 
     constructor() {
         this.items = [

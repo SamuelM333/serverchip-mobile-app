@@ -35,9 +35,6 @@ export class AppComponent implements AfterViewInit {
     }
 
     public onItemTap(args) {
-        console.log("------------------------ ItemTapped");
-        console.log(args.index);
-        console.log(this.pages[args.index].route);
         this.routerExtensions.navigate([this.pages[args.index].route]);
         this.title = this.pages[args.index].name;
         this.drawer.closeDrawer();

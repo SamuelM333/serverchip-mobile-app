@@ -1,6 +1,4 @@
 import { Component } from "@angular/core";
-import { TNSFontIconService } from 'nativescript-ng2-fonticon';
-
 
 @Component({
     selector: "reports",
@@ -21,11 +19,6 @@ export class ReportsComponent {
             { name: "kek3", continent: "wut" },
             { name: "kek3", continent: "wut" },
         ];
-        // const app = require('application');
-        //
-        // if (app.android) {
-        //     app.android.on(app.AndroidApplication.activityBackPressedEvent, () => this.onBack());
-        // }
     }
 
     onTap(args) {

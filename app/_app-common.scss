@@ -1,5 +1,6 @@
 // Import the theme’s variables
 @import '../node_modules/nativescript-theme-core/scss/dark';
+
 // Import global colors
 @import "colors";
 
@@ -27,7 +28,7 @@ Page {
 
 ActionBar {
   background-color: $header;
-  color: $text-color;
+  color: $primary;
 }
 
 RadSideDrawer {
