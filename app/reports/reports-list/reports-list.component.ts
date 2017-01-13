@@ -2,10 +2,10 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "reports",
-    templateUrl: "./reports/reports.component.html",
-    styleUrls: ["./reports/reports.component.css"]
+    templateUrl: "./reports/reports-list/reports-list.component.html",
+    styleUrls: ["./reports/reports-list/reports-list.component.css"]
 })
-export class ReportsComponent {
+export class ReportsListComponent {
 
     public items: Array<any>;
 
@@ -24,6 +24,10 @@ export class ReportsComponent {
     onTap(args) {
         console.log(args.index);
         console.log(this.items[args.index].name);
+    }
+
+    buttonTap(args){
+        console.log(args.index);
     }
 
 

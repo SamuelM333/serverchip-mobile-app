@@ -7,7 +7,8 @@ import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
 import { routes } from './app.routes';
 import { AppComponent } from "./app.component";
 import { TasksComponent } from './tasks/tasks.component';
-import { ReportsComponent } from './reports/reports.component';
+import { ReportsListComponent } from './reports/reports-list/reports-list.component';
+import { ReportViewComponent } from './reports/report-view/report-view.component';
 import { MicrochipsComponent } from './microchips/microchips.component';
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MicrochipsComponent } from './microchips/microchips.component';
         SIDEDRAWER_DIRECTIVES,
         AppComponent,
         TasksComponent,
-        ReportsComponent,
+        ReportsListComponent,
+        ReportViewComponent,
         MicrochipsComponent
     ],
     providers: [],

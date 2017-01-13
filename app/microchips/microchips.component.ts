@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { TNSFontIconService } from 'nativescript-ng2-fonticon';
 
 @Component({
     selector: "microchips",
@@ -12,13 +11,13 @@ export class MicrochipsComponent {
 
     constructor() {
         this.items = [
-            { name: "kek1", continent: "wut" },
-            { name: "kek2", continent: "wut" },
-            { name: "kek3", continent: "wut" },
-            { name: "kek3", continent: "wut" },
-            { name: "kek3", continent: "wut" },
-            { name: "kek3", continent: "wut" },
-            { name: "kek3", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
         ];
 
     }

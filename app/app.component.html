@@ -8,7 +8,7 @@
         </StackLayout>
         <StackLayout class="sideStackLayout">
             <GridLayout>
-                <ListView [items]="pages" (itemTap)="onItemTap($event)">
+                <ListView [items]="pages" (itemTap)="onNavigate($event)">
                     <template let-page="item">
                         <StackLayout orientation="horizontal">
                             <Label class="fa side-label sideLightGrayLabel"

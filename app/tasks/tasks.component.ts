@@ -1,8 +1,4 @@
 import { Component } from "@angular/core";
-import { registerElement } from "nativescript-angular/element-registry";
-
-registerElement("CardView", () => require("nativescript-cardview").CardView);
-
 // const app = require('application');
 
 @Component({
@@ -10,7 +6,8 @@ registerElement("CardView", () => require("nativescript-cardview").CardView);
     templateUrl: "./tasks/tasks.component.html",
     styleUrls: ["./tasks/tasks.component.css"]
 })
-export class TasksComponent {
+export class TasksComponent  {
+
     public items: Array<any>;
 
     constructor() {
@@ -29,6 +26,14 @@ export class TasksComponent {
         //     app.android.on(app.AndroidApplication.activityBackPressedEvent, () => this.onBack());
         // }
     }
+
+
+
+    // public onItemTap(args) {
+    //     this.routerExtensions.navigate([this.pages[args.index].route]);
+    //     this.title = this.pages[args.index].name;
+    //     this.drawer.closeDrawer();
+    // }
 
     onTap(args) {
         console.log(args.index);
