@@ -11,13 +11,13 @@ export class ReportsListComponent {
 
     constructor() {
         this.items = [
-            { name: "kek1", continent: "wut" },
-            { name: "kek2", continent: "wut" },
-            { name: "kek3", continent: "wut" },
-            { name: "kek3", continent: "wut" },
-            { name: "kek3", continent: "wut" },
-            { name: "kek3", continent: "wut" },
-            { name: "kek3", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
+            { name: "kek", continent: "wut" },
         ];
     }
 
@@ -26,8 +26,8 @@ export class ReportsListComponent {
         console.log(this.items[args.index].name);
     }
 
-    buttonTap(args){
-        console.log(args.index);
+    buttonTap(index){
+        console.log();
     }
 
 
