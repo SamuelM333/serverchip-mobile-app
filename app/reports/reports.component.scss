@@ -1,1 +1,19 @@
+@import "colors";
 
+.cardLabel {
+  margin-left: 20px;
+  color: black;
+}
+
+.cardTitle  {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.cardStyle {
+  background-color: $background-white;
+}
+
+.btn-grid {
+  margin-top: 50px;
+}

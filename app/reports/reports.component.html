@@ -1,1 +1,18 @@
-<Label text="reports"></Label>
+<ListView class="list-group" height="100%" [items]="items" (itemTap)="onTap($event)" separatorColor="white">
+    <template let-country="item">
+        <CardView #item class="cardStyle" margin="10" elevation="20" radius="5">
+            <StackLayout>
+                <!--<Image stretch="aspectFill" src="~/images/placeholder.png"></Image>-->
+                <Label class="cardLabel cardTitle" textWrap="true" text="Title goes here"></Label>
+                <Label class="cardLabel cardSubtitle" text="Subtitle here"></Label>
+                <!--<Label class="cardLabel"  verticalAlignment="center"-->
+                <!--horizontalAlignment="center"></Label>-->
+                <GridLayout class="btn-grid" columns="*, *, *" orientation="horizontal" verticalAlignment="bottom" width="100%">
+                    <!--<Button col="1" class="btn btn-primary" text="Action 1"></Button>-->
+                    <Button col="2" class="btn btn-primary" text="Action"></Button>
+                    <!--<Button col="2" [text]="country.name"></Button>-->
+                </GridLayout>
+            </StackLayout>
+        </CardView>
+    </template>
+</ListView>
