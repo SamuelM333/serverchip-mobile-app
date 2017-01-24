@@ -55,3 +55,28 @@ RadSideDrawer {
   color: white;
   padding: 15px 0 15px 25px;
 }
+
+.sideTitleStackLayout {
+  background-color: $header;
+}
+
+.profile-picture {
+  width: 25%;
+  border-radius: 200%;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.profile-text {
+  margin-top: 2%;
+  margin-left: 5%;
+  color: black;
+  font-size: 15vw;
+}
+
+.profile-text2 {
+  margin-left: 5%;
+  color: $blue-gray-lighten;
+  font-size: 13vw;
+  margin-bottom: 3%;
+}
