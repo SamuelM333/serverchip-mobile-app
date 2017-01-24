@@ -1,6 +1,11 @@
-<!--<ActionBar title="A report">-->
-    <!--<NavigationButton text="Go Back" android.systemIcon="res://ic_arrow_back_black_24dp"-->
-                      <!--(tap)="onNavBtnTap()"></NavigationButton>-->
-<!--</ActionBar>-->
+<ActionBar title="Report details">
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"
+                      (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
 
-<Label [text]="'Report ' + id"></Label>
+<StackLayout>
+    <Label [text]="'Report ' + id"></Label>
+</StackLayout>
+
+
+

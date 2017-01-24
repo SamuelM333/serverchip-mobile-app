@@ -1,15 +1,42 @@
-<ListView class="list-group" height="100%" [items]="items" (itemTap)="onTap($event)" separatorColor="white">
-    <template let-country="item">
-        <CardView #item class="cardStyle" margin="10" elevation="20" radius="5">
-            <StackLayout>
-                <Image stretch="aspectFill" src="~/images/placeholder.png"></Image>
-                <Label class="cardLabel cardTitle" textWrap="true" text="Title goes here"></Label>
-                <Label class="cardLabel cardSubtitle" text="Subtitle here"></Label>
-                <GridLayout columns="*, *" orientation="horizontal" verticalAlignment="bottom" width="100%">
-                    <Button col="0" class="btn btn-primary" text="Action 1"></Button>
-                    <Button col="1" class="btn btn-primary" text="Action 2"></Button>
-                </GridLayout>
-            </StackLayout>
-        </CardView>
-    </template>
-</ListView>
+<ActionBar title="Tasks">
+    <NavigationButton icon="res://ic_menu_black_24dp" (tap)="toggleDrawer()"></NavigationButton>
+</ActionBar>
+<RadSideDrawer tkExampleTitle tkToggleNavButton>
+    <StackLayout tkDrawerContent class="sideStackLayout">
+        <StackLayout class="sideTitleStackLayout">
+            <!--<Label class="side-title" text="Navigation Menu"></Label>-->
+        </StackLayout>
+        <StackLayout class="sideStackLayout">
+            <GridLayout>
+                <ListView [items]="pages">
+                    <template let-page="item">
+                        <StackLayout orientation="horizontal">
+                            <Label class="fa side-label sideLightGrayLabel"
+                                   [text]="page.icon + page.name"
+                                   [nsRouterLink]="[page.route]"
+                                   pageTransition="none">
+                            </Label>
+                        </StackLayout>
+                    </template>
+                </ListView>
+            </GridLayout>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout tkMainContent>
+        <ListView class="list-group" height="100%" [items]="items" (itemTap)="onTap($event)" separatorColor="white">
+            <template let-country="item">
+                <CardView #item class="cardStyle" margin="10" elevation="20" radius="5">
+                    <StackLayout>
+                        <Image stretch="aspectFill" src="~/images/placeholder.png"></Image>
+                        <Label class="cardLabel cardTitle" textWrap="true" text="Title goes here"></Label>
+                        <Label class="cardLabel cardSubtitle" text="Subtitle here"></Label>
+                        <GridLayout columns="*, *" orientation="horizontal" verticalAlignment="bottom" width="100%">
+                            <Button col="0" class="btn btn-primary" text="Action 1"></Button>
+                            <Button col="1" class="btn btn-primary" text="Action 2"></Button>
+                        </GridLayout>
+                    </StackLayout>
+                </CardView>
+            </template>
+        </ListView>
+    </StackLayout>
+</RadSideDrawer>

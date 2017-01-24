@@ -1,16 +1,28 @@
-import { Component } from "@angular/core";
-// const app = require('application');
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from "@angular/core";
+import { RadSideDrawerComponent, SideDrawerType } from 'nativescript-telerik-ui/sidedrawer/angular';
+
 
 @Component({
     selector: "tasks",
     templateUrl: "./tasks/tasks.component.html",
     styleUrls: ["./tasks/tasks.component.css"]
 })
-export class TasksComponent  {
+export class TasksComponent implements AfterViewInit {
 
+    @ViewChild(RadSideDrawerComponent)
+    public drawerComponent: RadSideDrawerComponent;
+    private drawer: SideDrawerType;
     public items: Array<any>;
+    public pages;
 
-    constructor() {
+    constructor(private _changeDetectionRef: ChangeDetectorRef) {
+
+        this.pages = [
+            { name: ' Tasks', icon: String.fromCharCode(0xf0ae), route: '/tasks' },
+            { name: ' Reports', icon: String.fromCharCode(0xf0f6), route: '/reports' },
+            { name: ' Microchips', icon: String.fromCharCode(0xf2db), route: '/microchips' }
+        ];
+
         this.items = [
             { name: "kek1", continent: "wut" },
             { name: "kek2", continent: "wut" },
@@ -27,21 +39,31 @@ export class TasksComponent  {
         // }
     }
 
-
-
-    // public onItemTap(args) {
-    //     this.routerExtensions.navigate([this.pages[args.index].route]);
-    //     this.title = this.pages[args.index].name;
-    //     this.drawer.closeDrawer();
-    // }
+    ngAfterViewInit() {
+        this.drawer = this.drawerComponent.sideDrawer;
+        this._changeDetectionRef.detectChanges();
+    }
 
     onTap(args) {
         console.log(args.index);
         console.log(this.items[args.index].name);
     }
 
-    // onBack() {
-    //     console.log("back");
-    // }
+    public toggleDrawer() {
+        this.drawer.toggleDrawerState();
+    }
+
+    public onNavigate(args) {
+        // this.drawer.closeDrawer();
+        // this.title = this.pages[args.index].name;
+        // this.routerExtensions.navigate([this.pages[args.index].route], {
+        //     transition: {
+        //         name: "flip",
+        //         duration: 2000,
+        //         curve: "linear"
+        //     }
+        // });
+        console.log(this.pages[args.index].route);
+    }
 
 }

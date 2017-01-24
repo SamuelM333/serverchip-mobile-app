@@ -1,25 +1,47 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from "@angular/core";
+import { RadSideDrawerComponent, SideDrawerType } from 'nativescript-telerik-ui/sidedrawer/angular';
+
 
 @Component({
     selector: "microchips",
     templateUrl: "./microchips/microchips.component.html",
     styleUrls: ["./microchips/microchips.component.css"]
 })
-export class MicrochipsComponent {
+export class MicrochipsComponent implements AfterViewInit {
 
+    @ViewChild(RadSideDrawerComponent)
+    public drawerComponent: RadSideDrawerComponent;
+    private drawer: SideDrawerType;
     public items: Array<any>;
+    public pages;
 
-    constructor() {
-        this.items = [
-            { name: "kek", continent: "wut" },
-            { name: "kek", continent: "wut" },
-            { name: "kek", continent: "wut" },
-            { name: "kek", continent: "wut" },
-            { name: "kek", continent: "wut" },
-            { name: "kek", continent: "wut" },
-            { name: "kek", continent: "wut" },
+    constructor(private _changeDetectionRef: ChangeDetectorRef) {
+
+        this.pages = [
+            { name: ' Tasks', icon: String.fromCharCode(0xf0ae), route: '/tasks' },
+            { name: ' Reports', icon: String.fromCharCode(0xf0f6), route: '/reports' },
+            { name: ' Microchips', icon: String.fromCharCode(0xf2db), route: '/microchips' }
         ];
 
+        this.items = [
+            { name: "kek1", continent: "wut" },
+            { name: "kek2", continent: "wut" },
+            { name: "kek3", continent: "wut" },
+            { name: "kek3", continent: "wut" },
+            { name: "kek3", continent: "wut" },
+            { name: "kek3", continent: "wut" },
+            { name: "kek3", continent: "wut" },
+        ];
+
+    }
+
+    ngAfterViewInit() {
+        this.drawer = this.drawerComponent.sideDrawer;
+        this._changeDetectionRef.detectChanges();
+    }
+
+    public toggleDrawer() {
+        this.drawer.toggleDrawerState();
     }
 
     onTap(args) {
