@@ -12,11 +12,9 @@
             <GridLayout>
                 <ListView [items]="pages">
                     <template let-page="item">
-                        <StackLayout orientation="horizontal">
+                        <StackLayout orientation="horizontal" [nsRouterLink]="[page.route]">
                             <Label class="fa side-label sideLightGrayLabel"
-                                   [text]="page.icon + page.name"
-                                   [nsRouterLink]="[page.route]"
-                                   pageTransition="none">
+                                   [text]="page.icon + page.name">
                             </Label>
                         </StackLayout>
                     </template>
