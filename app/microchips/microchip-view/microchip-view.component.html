@@ -2,9 +2,19 @@
     <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
 </ActionBar>
 
-<StackLayout>
-    <Label [text]="'Microchip ' + id"></Label>
-    <Label [text]="'IP ' + microchip?.ip"></Label>
+<StackLayout class="mainStackLayout">
+    <StackLayout orientation="horizontal">
+        <Label class="font-weight-bold" text="Name: "></Label>
+        <Label [text]="microchip?.name"></Label>
+    </StackLayout>
+    <StackLayout orientation="horizontal" *ngIf="microchip?.description">
+        <Label  text="Description: "></Label>
+        <Label [text]="microchip?.description"></Label>
+    </StackLayout>
+    <StackLayout orientation="horizontal">
+        <Label class="font-weight-bold" text="IP: "></Label>
+        <Label [text]="microchip?.ip"></Label>
+    </StackLayout>
 </StackLayout>
 
 
