@@ -15,15 +15,8 @@ export class MicrochipsListComponent implements OnInit, AfterViewInit {
     public drawerComponent: RadSideDrawerComponent;
     private drawer: SideDrawerType;
     public microchips: Microchip[];
-    public pages;
 
     constructor(private apiService: ApiService, private _changeDetectionRef: ChangeDetectorRef) {
-
-        this.pages = [
-            { name: ' Tasks', icon: String.fromCharCode(0xf0ae), route: '/tasks' },
-            { name: ' Reports', icon: String.fromCharCode(0xf0f6), route: '/reports' },
-            { name: ' Microchips', icon: String.fromCharCode(0xf2db), route: '/microchips' }
-        ];
 
     }
 

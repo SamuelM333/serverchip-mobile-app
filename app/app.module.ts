@@ -6,7 +6,8 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { SIDEDRAWER_DIRECTIVES } from 'nativescript-telerik-ui/sidedrawer/angular';
 import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
 import { routes } from './app.routes';
-import { ApiService } from './shared/api.service'
+import { ApiService } from './shared/api.service';
+import { SideDrawerComponent } from './shared/side-drawer/side-drawer.component';
 import { AppComponent } from './app.component';
 import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
 import { TaskViewComponent } from './tasks/task-view/task-view.component';
@@ -34,10 +35,12 @@ import { MicrochipViewComponent } from './microchips/microchip-view/microchip-vi
         ReportsListComponent,
         ReportViewComponent,
         MicrochipsListComponent,
-        MicrochipViewComponent
+        MicrochipViewComponent,
+        SideDrawerComponent,
     ],
     providers: [ApiService],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+}

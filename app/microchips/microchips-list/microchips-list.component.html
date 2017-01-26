@@ -3,24 +3,7 @@
 </ActionBar>
 <RadSideDrawer tkExampleTitle tkToggleNavButton>
     <StackLayout tkDrawerContent class="sideStackLayout">
-        <StackLayout class="sideTitleStackLayout">
-            <Image horizontalAlignment="left" src="~/images/generic_profile.png" class="profile-picture"></Image>
-            <label horizontalAlignment="left" text="User" class="profile-text"></label>
-            <label horizontalAlignment="left" text="usermail@gmail.com" class="profile-text2"></label>
-        </StackLayout>
-        <StackLayout class="sideStackLayout">
-            <GridLayout>
-                <ListView [items]="pages">
-                    <template let-page="item">
-                        <StackLayout orientation="horizontal" [nsRouterLink]="[page.route]">
-                            <Label class="fa side-label sideLightGrayLabel"
-                                   [text]="page.icon + page.name">
-                            </Label>
-                        </StackLayout>
-                    </template>
-                </ListView>
-            </GridLayout>
-        </StackLayout>
+        <side-drawer></side-drawer>
     </StackLayout>
     <StackLayout tkMainContent>
         <ListView class="list-group" height="100%" [items]="microchips" (itemTap)="onTap($event)" separatorColor="white">
