@@ -1,9 +1,10 @@
-<ActionBar title="Report details">
+<ActionBar [title]="microchip?.name">
     <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
 </ActionBar>
 
 <StackLayout>
-    <Label [text]="'Report ' + id"></Label>
+    <Label [text]="'Microchip ' + id"></Label>
+    <Label [text]="'IP ' + microchip?.ip"></Label>
 </StackLayout>
 
 

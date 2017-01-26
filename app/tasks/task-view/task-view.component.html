@@ -1,0 +1,23 @@
+<ActionBar [title]="task?.name">
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
+
+<StackLayout>
+    <!--<Label [text]="task?.description"></Label>-->
+    <CardView #item class="cardStyle" margin="10" elevation="20" radius="5">
+        <StackLayout>
+            <!--<Image stretch="aspectFill" src="~/images/placeholder.png"></Image>-->
+            <Label class="cardLabel cardTitle" textWrap="true" [text]="'Name: ' + task?.name"></Label>
+            <Label class="cardLabel cardSubtitle" [text]="'Description: ' + task?.description"></Label>
+            <Label class="cardLabel cardSubtitle" [text]="'Microchip name: ' + microchip_name"></Label>
+            <Label class="cardLabel cardSubtitle" [text]="'Microchip IP: ' + microchip_ip"></Label>
+            <!--<GridLayout columns="*, *" orientation="horizontal" verticalAlignment="bottom" width="100%">-->
+                <!--&lt;!&ndash;<Button col="0" class="btn btn-primary" text="Action 1"></Button>&ndash;&gt;-->
+                <!--<Button col="1" class="btn btn-primary" text="Details"></Button>-->
+            <!--</GridLayout>-->
+        </StackLayout>
+    </CardView>
+</StackLayout>
+
+
+
