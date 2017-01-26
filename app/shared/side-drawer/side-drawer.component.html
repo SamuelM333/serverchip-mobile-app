@@ -1,0 +1,17 @@
+<StackLayout class="sideTitleStackLayout">
+    <Image horizontalAlignment="left" src="~/images/generic_profile.png" class="profile-picture"></Image>
+    <label horizontalAlignment="left" text="User" class="profile-text"></label>
+    <label horizontalAlignment="left" text="usermail@gmail.com" class="profile-text2"></label>
+</StackLayout>
+<StackLayout class="sideStackLayout">
+    <GridLayout>
+        <ListView [items]="pages" (itemTap)="onItemTap($event)">
+            <template let-page="item">
+                <StackLayout orientation="horizontal">
+                    <Label class="fa side-label sideLightGrayLabel" [text]="page.icon"></Label>
+                    <Label class="side-label sideLightGrayLabel" [text]="page.name"></Label>
+                </StackLayout>
+            </template>
+        </ListView>
+    </GridLayout>
+</StackLayout>

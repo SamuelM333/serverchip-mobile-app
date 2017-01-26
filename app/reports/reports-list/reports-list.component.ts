@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { RadSideDrawerComponent, SideDrawerType } from 'nativescript-telerik-ui/sidedrawer/angular';
+import { RadSideDrawerComponent, SideDrawerType } from "nativescript-telerik-ui/sidedrawer/angular";
 
 @Component({
     selector: "reports",
@@ -12,14 +12,9 @@ export class ReportsListComponent implements AfterViewInit {
     public drawerComponent: RadSideDrawerComponent;
     private drawer: SideDrawerType;
     public items: Array<any>;
-    public pages;
 
     constructor(private _changeDetectionRef: ChangeDetectorRef) {
-        this.pages = [
-            { name: ' Tasks', icon: String.fromCharCode(0xf0ae), route: '/tasks' },
-            { name: ' Reports', icon: String.fromCharCode(0xf0f6), route: '/reports' },
-            { name: ' Microchips', icon: String.fromCharCode(0xf2db), route: '/microchips' }
-        ];
+
 
         this.items = [
             { name: "kek", continent: "wut" },

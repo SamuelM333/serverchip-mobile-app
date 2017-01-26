@@ -1,15 +1,16 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { NativeScriptFormsModule } from 'nativescript-angular/forms';
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { SIDEDRAWER_DIRECTIVES } from "nativescript-telerik-ui/sidedrawer/angular";
-import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
-import { routes } from './app.routes';
+import { TNSFontIconModule } from "nativescript-ng2-fonticon";
+import { routes } from "./app.routes";
 import { AppComponent } from "./app.component";
-import { TasksComponent } from './tasks/tasks.component';
-import { ReportsListComponent } from './reports/reports-list/reports-list.component';
-import { ReportViewComponent } from './reports/report-view/report-view.component';
-import { MicrochipsComponent } from './microchips/microchips.component';
+import { TasksComponent } from "./tasks/tasks.component";
+import { ReportsListComponent } from "./reports/reports-list/reports-list.component";
+import { ReportViewComponent } from "./reports/report-view/report-view.component";
+import { MicrochipsComponent } from "./microchips/microchips.component";
+import { SideDrawerComponent } from "./shared/side-drawer/side-drawer.component";
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import { MicrochipsComponent } from './microchips/microchips.component';
         })
     ],
     declarations: [
+        SideDrawerComponent,
         SIDEDRAWER_DIRECTIVES,
         AppComponent,
         TasksComponent,
