@@ -22,24 +22,13 @@ export class TasksListComponent implements OnInit, AfterViewInit {
 
     ngOnInit() {
         let error: boolean = false;
-        let microchips;
-        this.apiService.getMicrochips().subscribe(
-            data => microchips = data._items,
+        this.apiService.getTasks().subscribe(
+            data => this.tasks = data._items,
             err => {
                 error = true;
                 console.log('Error:', err);
             },
-            () => {
-                if (!error) {
-                    for (let microchip of microchips) {
-                        if (microchip.tasks) {
-                            for (let task of microchip.tasks) {
-                                this.tasks.push(task);
-                            }
-                        }
-                    }
-                }
-            }
+            // () => { console.log(JSON.stringify(this.tasks, null, 2))}
         );
     }
 

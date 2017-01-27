@@ -4,6 +4,7 @@ import 'rxjs/Rx';
 import { User } from './user';
 import { Microchip } from './microchip';
 import { Report } from "./report";
+import { Task } from "./task";
 
 export const apiUrl = 'https://serverchip-samuelm333.rhcloud.com/';
 // export const apiUrl = 'http://127.0.0.1:5000/';
@@ -51,6 +52,55 @@ export class ApiService {
         });
 
         return this.http.delete(apiUrl + 'microchip/' + _id, { headers: headers }).map(
+            (response: Response) => response.json()
+        );
+    }
+
+    /* Tasks */
+
+    getTasks() {
+        return this.http.get(apiUrl + 'task').map(
+            (response: Response) => response.json()
+        );
+    }
+
+    getTaskByID(_id: string) {
+        return this.http.get(apiUrl + 'task/' + _id + '?embedded={"microchip":1}').map(
+            (response: Response) => response.json()
+        );
+    }
+
+    getTaskByMicrochipID(_id: string) {
+        return this.http.get(apiUrl + `task?where={"microchip": "${ _id }"}`).map(
+            (response: Response) => response.json()
+        );
+    }
+
+    insertTask(task: Task) {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+
+        return this.http.post(apiUrl + 'task', JSON.stringify(task), { headers: headers }).map(
+            (response: Response) => response.json()
+        );
+    }
+
+    updateTask(_id: string, task: Task) {
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'If-Match': task._etag
+        });
+
+        return this.http.put(apiUrl + 'task/' + _id, JSON.stringify(task), { headers: headers }).map(
+            (response: Response) => response.json()
+        );
+    }
+
+    deleteTask(_id: string, task: Task) {
+        let headers = new Headers({
+            'If-Match': task._etag
+        });
+
+        return this.http.delete(apiUrl + 'task/' + _id, { headers: headers }).map(
             (response: Response) => response.json()
         );
     }

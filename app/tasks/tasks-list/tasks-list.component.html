@@ -16,7 +16,7 @@
                         <GridLayout columns="*, *" orientation="horizontal" verticalAlignment="bottom" width="100%">
                             <!--<Button col="0" class="btn btn-primary" text="Action 1"></Button>-->
                             <Button col="1" class="btn btn-primary" text="Details"
-                                    [nsRouterLink]="['/tasks', i]"></Button>
+                                    [nsRouterLink]="['/tasks', task?._id]"></Button>
                         </GridLayout>
                     </StackLayout>
                 </CardView>
