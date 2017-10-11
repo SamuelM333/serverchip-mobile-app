@@ -1,16 +1,18 @@
 import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { RadSideDrawerComponent, SideDrawerType } from 'nativescript-telerik-ui/sidedrawer/angular';
+import { RadSideDrawer } from "nativescript-pro-ui/sidedrawer";
+import { RadSideDrawerComponent } from "nativescript-pro-ui/sidedrawer/angular";
 
 @Component({
-    selector: "reports",
-    templateUrl: "./reports/reports-list/reports-list.component.html",
-    styleUrls: ["./reports/reports-list/reports-list.component.css"]
+    moduleId: module.id,
+    selector: "report-list",
+    templateUrl: "./reports-list.component.html",
+    styleUrls: ["./reports-list.component.css"]
 })
 export class ReportsListComponent implements AfterViewInit {
 
     @ViewChild(RadSideDrawerComponent)
     public drawerComponent: RadSideDrawerComponent;
-    private drawer: SideDrawerType;
+    private drawer: RadSideDrawer;
     public items: Array<any>;
 
     constructor(private _changeDetectionRef: ChangeDetectorRef) {
@@ -40,7 +42,7 @@ export class ReportsListComponent implements AfterViewInit {
         console.log(this.items[args.index].name);
     }
 
-    buttonTap(index){
+    buttonTap(index) {
         console.log();
     }
 

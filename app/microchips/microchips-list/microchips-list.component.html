@@ -7,7 +7,7 @@
     </StackLayout>
     <StackLayout tkMainContent>
         <ListView class="list-group" height="100%" [items]="microchips" (itemTap)="onTap($event)" separatorColor="white">
-            <template let-microchip="item">
+            <ng-template let-microchip="item">
                 <CardView #item class="cardStyle" margin="10" elevation="20" radius="5">
                     <StackLayout>
                         <Image stretch="aspectFill" src="~/images/placeholder.png"></Image>
@@ -19,7 +19,7 @@
                         </GridLayout>
                     </StackLayout>
                 </CardView>
-            </template>
+            </ng-template>
         </ListView>
     </StackLayout>
 </RadSideDrawer>

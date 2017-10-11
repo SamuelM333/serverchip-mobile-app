@@ -4,9 +4,10 @@ import { RouterExtensions } from "nativescript-angular";
 
 
 @Component({
-    selector: "reports",
-    templateUrl: "./reports/report-view/report-view.component.html",
-    styleUrls: ["./reports/report-view/report-view.component.css"]
+    moduleId: module.id,
+    selector: "report-view",
+    templateUrl: "./report-view.component.html",
+    styleUrls: ["./report-view.component.css"]
 })
 export class ReportViewComponent {
 

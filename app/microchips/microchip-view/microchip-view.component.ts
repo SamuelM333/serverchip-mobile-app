@@ -7,9 +7,10 @@ import { Task } from "../../shared/task";
 
 
 @Component({
-    selector: "microchips",
-    templateUrl: './microchips/microchip-view/microchip-view.component.html',
-    styleUrls: ["./microchips/microchip-view/microchip-view.component.css"]
+    moduleId: module.id,
+    selector: "microchip-view",
+    templateUrl: './microchip-view.component.html',
+    styleUrls: ["./microchip-view.component.css"]
 })
 export class MicrochipViewComponent implements OnInit {
 
@@ -19,7 +20,9 @@ export class MicrochipViewComponent implements OnInit {
 
     constructor(private apiService: ApiService, private route: ActivatedRoute,
                 private routerExtensions: RouterExtensions) {
-        this.route.params.forEach((params) => { this.id = params['id']; });
+        this.route.params.forEach((params) => {
+            this.id = params['id'];
+        });
     }
 
     ngOnInit() {
@@ -29,10 +32,10 @@ export class MicrochipViewComponent implements OnInit {
                 this.microchip = data;
                 data.tasks ? this.tasks = data.tasks : this.tasks = [];
             },
-        err => {
-            error = true;
-            console.log('Error:', err);
-        },
+            err => {
+                error = true;
+                console.log('Error:', err);
+            },
             () => {
                 console.log(JSON.stringify(this.tasks));
                 // if (!error) {
@@ -44,7 +47,7 @@ export class MicrochipViewComponent implements OnInit {
                 //     }
                 // }
             }
-    )
+        )
         ;
     }
 

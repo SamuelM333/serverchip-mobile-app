@@ -1,19 +1,22 @@
 import { Component, ViewChild, OnInit, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { RadSideDrawerComponent, SideDrawerType } from 'nativescript-telerik-ui/sidedrawer/angular';
+import { RadSideDrawer } from "nativescript-pro-ui/sidedrawer";
+import { RadSideDrawerComponent } from "nativescript-pro-ui/sidedrawer/angular";
+
 import { ApiService } from '../../shared/api.service'
 import { Task } from '../../shared/task'
 
 
 @Component({
+    moduleId: module.id,
     selector: "tasks-list",
-    templateUrl: './tasks/tasks-list/tasks-list.component.html',
-    styleUrls: ["./tasks/tasks-list/tasks-list.component.css"]
+    templateUrl: './tasks-list.component.html',
+    styleUrls: ["./tasks-list.component.css"]
 })
 export class TasksListComponent implements OnInit, AfterViewInit {
 
     @ViewChild(RadSideDrawerComponent)
     public drawerComponent: RadSideDrawerComponent;
-    private drawer: SideDrawerType;
+    private drawer: RadSideDrawer;
     public tasks: Task[] = [];
 
 

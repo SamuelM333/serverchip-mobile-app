@@ -7,7 +7,7 @@
     </StackLayout>
     <StackLayout tkMainContent>
         <ListView class="list-group" height="100%" [items]="items" (itemTap)="onTap($event)" separatorColor="white">
-            <template let-item="item" let-i="index">
+            <ng-template let-item="item" let-i="index">
                 <CardView #item class="cardStyle" margin="10" elevation="20" radius="5">
                     <StackLayout>
                         <Label class="cardLabel cardTitle" textWrap="true" text="Title goes here"></Label>
@@ -20,7 +20,7 @@
                         </GridLayout>
                     </StackLayout>
                 </CardView>
-            </template>
+            </ng-template>
         </ListView>
     </StackLayout>
 </RadSideDrawer>

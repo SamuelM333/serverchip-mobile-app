@@ -15,6 +15,11 @@
         <Label class="font-weight-bold" text="IP: "></Label>
         <Label [text]="microchip?.ip"></Label>
     </StackLayout>
+    <StackLayout orientation="horizontal">
+        <Label class="font-weight-bold" text="Owner: "></Label>
+        <Label class="text-capitalize" [text]="microchip?.owner.name"></Label>
+        <Label class="text-capitalize" [text]="microchip?.owner.last_name"></Label>
+    </StackLayout>
 </StackLayout>
 
 

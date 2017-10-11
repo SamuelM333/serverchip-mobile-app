@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/Rx';
+
 import { User } from './user';
 import { Microchip } from './microchip';
 import { Report } from "./report";
 import { Task } from "./task";
 
-export const apiUrl = 'https://serverchip-samuelm333.rhcloud.com/';
-// export const apiUrl = 'http://127.0.0.1:5000/';
+export const apiUrl = 'http://192.168.1.123:5000/';
 
 @Injectable()
 export class ApiService {
@@ -22,7 +22,7 @@ export class ApiService {
     }
 
     getMicrochipByID(_id: string) {
-        return this.http.get(apiUrl + 'microchip/' + _id).map(
+        return this.http.get(apiUrl + 'microchip/' + _id + '?embedded={"owner":1}').map(
             (response: Response) => response.json()
         );
     }
@@ -59,7 +59,7 @@ export class ApiService {
     /* Tasks */
 
     getTasks() {
-        return this.http.get(apiUrl + 'task').map(
+        return this.http.get(apiUrl + 'task?embedded={"microchip":1}').map(
             (response: Response) => response.json()
         );
     }

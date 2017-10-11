@@ -6,9 +6,10 @@ import { Task } from "../../shared/task";
 
 
 @Component({
+    moduleId: module.id,
     selector: "task-view",
-    templateUrl: './tasks/task-view/task-view.component.html',
-    styleUrls: ["./tasks/task-view/task-view.component.css"]
+    templateUrl: './task-view.component.html',
+    styleUrls: ["./task-view.component.css"]
 })
 export class TaskViewComponent implements OnInit {
 

@@ -1,19 +1,22 @@
 import { Component, ViewChild, AfterViewInit, ChangeDetectorRef, OnInit } from "@angular/core";
-import { RadSideDrawerComponent, SideDrawerType } from 'nativescript-telerik-ui/sidedrawer/angular';
+import { RadSideDrawer } from "nativescript-pro-ui/sidedrawer";
+import { RadSideDrawerComponent } from "nativescript-pro-ui/sidedrawer/angular";
+
 import { Microchip } from "../../shared/microchip";
 import { ApiService } from "../../shared/api.service";
 
 
 @Component({
-    selector: "microchips",
-    templateUrl: './microchips/microchips-list/microchips-list.component.html',
-    styleUrls: ["./microchips/microchips-list/microchips-list.component.css"]
+    moduleId: module.id,
+    selector: "microchip-list",
+    templateUrl: './microchips-list.component.html',
+    styleUrls: ["./microchips-list.component.css"]
 })
 export class MicrochipsListComponent implements OnInit, AfterViewInit {
 
     @ViewChild(RadSideDrawerComponent)
     public drawerComponent: RadSideDrawerComponent;
-    private drawer: SideDrawerType;
+    private drawer: RadSideDrawer;
     public microchips: Microchip[];
 
     constructor(private apiService: ApiService, private _changeDetectionRef: ChangeDetectorRef) {
