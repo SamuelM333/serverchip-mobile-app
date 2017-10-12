@@ -1,17 +1,10 @@
-import {
-  Component,
-  ViewChild,
-  ChangeDetectorRef,
-  OnInit,
-  AfterViewInit
-} from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from "@angular/core"; 
+import { ActivatedRoute } from '@angular/router'; 
 import { RouterExtensions } from "nativescript-angular";
 import { ApiService } from "../../shared/api.service";
 import { Microchip } from "../../shared/microchip";
 import { Task } from "../../shared/task";
-import { RadSideDrawer } from "nativescript-pro-ui/sidedrawer";
-import { RadSideDrawerComponent } from "nativescript-pro-ui/sidedrawer/angular";
+
 
 @Component({
   moduleId: module.id,
@@ -19,10 +12,7 @@ import { RadSideDrawerComponent } from "nativescript-pro-ui/sidedrawer/angular";
   templateUrl: "./microchip-view.component.html",
   styleUrls: ["./microchip-view.component.css"]
 })
-export class MicrochipViewComponent implements OnInit, AfterViewInit {
-  @ViewChild(RadSideDrawerComponent)
-  public drawerComponent: RadSideDrawerComponent;
-  private drawer: RadSideDrawer;
+export class MicrochipViewComponent implements OnInit {
   id: string;
   microchip: Microchip;
   tasks: Task[];
@@ -30,8 +20,7 @@ export class MicrochipViewComponent implements OnInit, AfterViewInit {
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
-    private routerExtensions: RouterExtensions,
-    private _changeDetectionRef: ChangeDetectorRef
+    private routerExtensions: RouterExtensions
   ) {
     this.route.params.forEach(params => {
       this.id = params["id"];
@@ -61,15 +50,6 @@ export class MicrochipViewComponent implements OnInit, AfterViewInit {
         // }
       }
     ); 
-  }
-
-  ngAfterViewInit() {
-    this.drawer = this.drawerComponent.sideDrawer;
-    this._changeDetectionRef.detectChanges();
-  }
-
-  public toggleDrawer() {
-    this.drawer.toggleDrawerState();
   }
 
   public onNavBtnTap() {

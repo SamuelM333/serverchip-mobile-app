@@ -1,5 +1,5 @@
 <ActionBar [title]="task?.name" class="action-bar">
-    <NavigationButton icon="res://menu"  android:visibility="collapsed" (tap)="toggleDrawer()"></NavigationButton>
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
 </ActionBar>
 <StackLayout class="mainStackLayout">
     <!--<Image stretch="aspectFill" src="~/images/placeholder.png"></Image>-->

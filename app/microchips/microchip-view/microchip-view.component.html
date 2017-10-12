@@ -1,23 +1,24 @@
 <ActionBar [title]="microchip?.name" class="action-bar">
-        <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="toggleDrawer()" ios.position="left">
-        </ActionItem>
-        <NavigationButton icon="res://menu" ios:visibility="none"  (tap)="toggleDrawer()"></NavigationButton>
-    </ActionBar>
-<RadSideDrawer tkExampleTitle tkToggleNavButton>
-    <StackLayout tkDrawerContent class="sideStackLayout">
-        <side-drawer></side-drawer>
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
+
+<StackLayout class="mainStackLayout">
+    <StackLayout orientation="horizontal">
+        <Label class="font-weight-bold" text="Name: "></Label>
+        <Label [text]="microchip?.name"></Label>
     </StackLayout>
-    <StackLayout tkMainContent>
-        <CardView class="cardStyle" margin="0 10 10 10" width="80%" height="80%" elevation="20" radius="5">
-            <StackLayout>
-                <Label class="cardLabel cardTitle" textWrap="true" text="microchip?.name"></Label>
-                <!-- <Label class="cardLabel cardSubtitle" [text]="microchip?.description"></Label> -->
-                <Label class="cardLabel cardSubtitle" text="Descripcion"></Label>
-                <Label class="cardLabel cardSubtitle labelFocused" text="microchip?.ip"></Label>
-                <GridLayout columns="*, *" orientation="horizontal" verticalAlignment="bottom" width="100%">
-                    <Button col="1" class="btn btn-primary" margin="10 10 10 0" text="Details" [nsRouterLink]="['/microchips', microchip._id]"></Button>
-                </GridLayout>
-            </StackLayout>
-        </CardView>
+    <StackLayout orientation="horizontal" *ngIf="microchip?.description">
+        <Label  text="Description: "></Label>
+        <Label [text]="microchip?.description"></Label>
     </StackLayout>
-</RadSideDrawer>
+    <StackLayout orientation="horizontal">
+        <Label class="font-weight-bold" text="IP: "></Label>
+        <Label [text]="microchip?.ip"></Label>
+    </StackLayout>
+    <StackLayout orientation="horizontal">
+        <Label class="font-weight-bold" text="Owner: "></Label>
+        <Label class="text-capitalize" [text]="microchip?.owner.name"></Label>
+        <Label class="text-capitalize" [text]="microchip?.owner.last_name"></Label>
+    </StackLayout>
+</StackLayout>
+

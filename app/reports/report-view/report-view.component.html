@@ -1,7 +1,5 @@
 <ActionBar title="Report details" class="action-bar">
-    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="toggleDrawer()" ios.position="left">
-    </ActionItem>
-    <NavigationButton icon="res://menu" ios:visibility="none" android:visibility="collapsed" (tap)="toggleDrawer()"></NavigationButton>
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
 </ActionBar>
 <StackLayout>
     <Label [text]="'Report ' + id"></Label>
