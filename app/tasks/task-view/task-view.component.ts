@@ -29,14 +29,13 @@ export class TaskViewComponent implements OnInit {
 
     ngOnInit() {
         let error: boolean = false;
-        this.apiService.getTaskByID(this.id).subscribe(
+        /* this.apiService.getTaskByID(this.id).subscribe(
             data => this.task = data,
             err => {
                 error = true;
-                console.log('Error:', err);
+                console.dir(err);
             },
             () => { console.log(JSON.stringify(this.task, null, 2))}
-
-        );
+        ); */
     }
 }

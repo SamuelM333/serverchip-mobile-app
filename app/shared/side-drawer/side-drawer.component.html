@@ -1,7 +1,7 @@
 <StackLayout class="sideTitleStackLayout">
     <Image horizontalAlignment="left" src="~/images/generic_profile.png" class="profile-picture"></Image>
     <label horizontalAlignment="left" text="User" class="profile-text"></label>
-    <label horizontalAlignment="left" text="usermail@gmail.com" class="profile-text2"></label>
+    <label horizontalAlignment="left" text="usermail@gmail.com" color="white" class="profile-text2"></label>
 </StackLayout>
 <StackLayout class="sideStackLayout">
     <GridLayout>
@@ -9,7 +9,7 @@
                   separatorColor="transparent">
             <template let-page="item">
                 <StackLayout orientation="horizontal" backgroundColor="transparent">
-                    <Label class="fa side-label sideLightGrayLabel" [text]="page.icon"></Label>
+                    <Label class="fa sideGreenLabel" [text]="page.icon"></Label>
                     <Label class="side-label sideLightGrayLabel" [text]="page.name"></Label>
                 </StackLayout>
             </template>

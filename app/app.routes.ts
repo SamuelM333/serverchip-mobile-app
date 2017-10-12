@@ -6,7 +6,7 @@ import { MicrochipsListComponent } from './microchips/microchips-list/microchips
 import { MicrochipViewComponent } from './microchips/microchip-view/microchip-view.component';
 
 export const routes = [
-    { path: "", redirectTo: "/tasks", pathMatch: "full" },
+    { path: "", redirectTo: "/microchips", pathMatch: "full" },
     { path: "tasks", component: TasksListComponent },
     { path: "tasks/:id", component: TaskViewComponent },
     { path: "reports", component: ReportsListComponent },

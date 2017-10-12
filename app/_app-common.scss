@@ -26,9 +26,14 @@ Page {
   background-color: $background-white;
 }
 
+
 ActionBar {
   background-color: $header;
   color: $primary;
+}
+
+.action-bar{
+  background-color: black;
 }
 
 RadSideDrawer {
@@ -42,7 +47,7 @@ RadSideDrawer {
 
 .sideTitleStackLayout{
   margin-bottom: 20;
-
+  background-color: $green;
 }
 
 .side-title {
@@ -50,14 +55,16 @@ RadSideDrawer {
   font-size: 20;
 }
 
+.sideGreenLabel{
+  color: $green;
+  font-size: 20;
+  padding: 15 0 15 25;
+}
+
 .side-label {
   font-size: 20;
   color: white;
   padding: 15 0 15 25;
-}
-
-.sideTitleStackLayout {
-  background-color: $header;
 }
 
 .profile-picture {
@@ -87,4 +94,8 @@ RadSideDrawer {
 
 .btn {
   border-radius: 1;
+}
+
+.title{
+  font-size: 16;
 }

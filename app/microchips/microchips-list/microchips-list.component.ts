@@ -13,7 +13,6 @@ import { ApiService } from "../../shared/api.service";
     styleUrls: ["./microchips-list.component.css"]
 })
 export class MicrochipsListComponent implements OnInit, AfterViewInit {
-
     @ViewChild(RadSideDrawerComponent)
     public drawerComponent: RadSideDrawerComponent;
     private drawer: RadSideDrawer;

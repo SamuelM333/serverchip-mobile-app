@@ -1,16 +1,24 @@
 @import "../../colors";
 
-
 .cardLabel {
-  margin-left: 20px;
+  margin-left: 10;
   color: white;
 }
 
-.cardTitle  {
-  margin-top: 5px;
-  font-size: 20;
+.btn{
+  border-radius: 5;
+}
+
+.cardTitle {
+  font-size: 25;
+  margin:10 10 0 10;
+}
+
+.labelFocused{
+  color:$green;
 }
 
 .cardStyle {
+  padding: 15;
   background-color: $blue-gray;
 }

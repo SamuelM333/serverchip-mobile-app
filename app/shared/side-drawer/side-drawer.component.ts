@@ -12,8 +12,8 @@ export class SideDrawerComponent implements OnInit {
     constructor(private router: Router) {
         this.pages = [
             {name: ' Tasks', icon: String.fromCharCode(0xf0ae), route: '/tasks'},
-            {name: ' Reports', icon: String.fromCharCode(0xf0f6), route: '/reports'},
-            {name: ' Microchips', icon: String.fromCharCode(0xf2db), route: '/microchips'}
+            {name: ' Microchips', icon: String.fromCharCode(0xf2db), route: '/microchips'},
+            {name: ' Reports', icon: String.fromCharCode(0xf0f6), route: '/reports'}
         ];
     }
 

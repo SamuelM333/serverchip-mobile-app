@@ -1,20 +1,23 @@
-<ActionBar title="Microchips">
-    <NavigationButton icon="res://ic_menu_black_24dp" (tap)="toggleDrawer()"></NavigationButton>
+<ActionBar title="Microchips" class="action-bar">
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="toggleDrawer()" ios.position="left">
+    </ActionItem>
+    <NavigationButton icon="res://menu" ios:visibility="none"  (tap)="toggleDrawer()"></NavigationButton>
 </ActionBar>
 <RadSideDrawer tkExampleTitle tkToggleNavButton>
     <StackLayout tkDrawerContent class="sideStackLayout">
         <side-drawer></side-drawer>
     </StackLayout>
     <StackLayout tkMainContent>
-        <ListView class="list-group" height="100%" [items]="microchips" (itemTap)="onTap($event)" separatorColor="white">
+        <ListView class="list-group" height="100%" [items]="microchips" margin="10 0 0 0" (itemTap)="onTap($event)" separatorColor="white">
             <ng-template let-microchip="item">
-                <CardView #item class="cardStyle" margin="10" elevation="20" radius="5">
+                <CardView #item class="cardStyle" margin="0 10 10 10"  elevation="20" radius="5">
                     <StackLayout>
-                        <Image stretch="aspectFill" src="~/images/placeholder.png"></Image>
                         <Label class="cardLabel cardTitle" textWrap="true" [text]="microchip?.name"></Label>
-                        <Label class="cardLabel cardSubtitle" [text]="microchip?.ip"></Label>
+                        <!-- <Label class="cardLabel cardSubtitle" [text]="microchip?.description"></Label> -->
+                        <Label class="cardLabel cardSubtitle" text="Descripcion"></Label>
+                        <Label class="cardLabel cardSubtitle labelFocused" [text]="microchip?.ip"></Label>
                         <GridLayout columns="*, *" orientation="horizontal" verticalAlignment="bottom" width="100%">
-                            <Button col="1" class="btn btn-primary" text="Details"
+                            <Button col="1" class="btn btn-primary" margin="10 10 10 0" text="Details"
                                     [nsRouterLink]="['/microchips', microchip._id]"></Button>
                         </GridLayout>
                     </StackLayout>
