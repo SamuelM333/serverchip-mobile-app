@@ -1,22 +1,20 @@
-import { Task } from './task';
+import { User } from './user';
 
 export class Microchip {
 
     _id: string;
     _etag: string;
     name: string;
-    owner: string;
+    owner: User;
     description: string;
     ip: string;
-    tasks: Task[];
 
-    constructor(id: string, etag: string, name: string, owner: string, description: string, ip: string, tasks: Task[]) {
-        this._id = id;
-        this._etag = etag;
+    constructor(name: string, owner: User, ip: string, description?: string, _id?: string, _etag?: string) {
+        this._id = _id;
+        this._etag = _etag;
         this.name = name;
         this.owner = owner;
         this.description = description;
         this.ip = ip;
-        this.tasks = tasks;
     }
 }
