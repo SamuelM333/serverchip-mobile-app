@@ -1,0 +1,22 @@
+<GridLayout>
+    <StackLayout class="mainStackLayout">
+        <StackLayout>
+            <TextField #nameInput="ngModel" [(ngModel)]="name" id="name" hint="Name" required></TextField>
+            <TextField [(ngModel)]="description" id="description" hint="Description"></TextField>
+            <TextField #ipInput="ngModel" [(ngModel)]="ip" id="ip" hint="IP" required ip></TextField>
+        </StackLayout>
+        <StackLayout *ngIf="nameInput.errors && (nameInput.dirty || nameInput.touched)">
+            <Label *ngIf="nameInput.errors.required" text="- A name is required"></Label>
+        </StackLayout>
+        <StackLayout *ngIf="ipInput.errors && (ipInput.dirty || ipInput.touched)">
+            <Label *ngIf="ipInput.errors.required" text="- An IP address is required"></Label>
+            <Label *ngIf="!ipInput.errors.required && ipInput.errors.ip" text="- IP address must be valid"></Label>
+        </StackLayout>
+        <StackLayout>
+            <Label *ngIf="nonUniqueIP" text="- IP address must be unique"></Label>
+        </StackLayout>
+    </StackLayout>
+    <FAB (tap)="onSubmit()" *ngIf="!(nameInput.errors && nameInput.dirty) && !(ipInput.errors && ipInput.dirty)"
+         icon="res://ic_check_white_24dp" rippleColor="#f1f1f1" class="fab-button"></FAB>
+</GridLayout>
+

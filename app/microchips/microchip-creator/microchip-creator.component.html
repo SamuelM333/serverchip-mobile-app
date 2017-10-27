@@ -1,0 +1,6 @@
+<ActionBar title="Add microchip" class="action-bar">
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
+
+<microchip-form [userID]="userID" [nonUniqueIP]="nonUniqueIP" (submitForm)="onSubmit($event)"></microchip-form>
+

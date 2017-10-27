@@ -3,26 +3,30 @@
     </ActionItem>
     <NavigationButton icon="res://menu" ios:visibility="none" (tap)="toggleDrawer()"></NavigationButton>
 </ActionBar>
-<RadSideDrawer tkExampleTitle tkToggleNavButton>
+<RadSideDrawer tkExampleTitle tkToggleNavButton showOverNavigation="true">
     <StackLayout tkDrawerContent class="sideStackLayout">
         <side-drawer></side-drawer>
     </StackLayout>
-    <StackLayout tkMainContent>
-        <ListView class="list-group" height="100%" [items]="microchips" margin="10 0 0 0" (itemTap)="onTap($event)" separatorColor="white">
-            <ng-template let-microchip="item">
-                <CardView #item class="cardStyle" margin="0 10 10 10"  elevation="20" radius="5">
+    <GridLayout tkMainContent tkExampleTitle tkToggleNavButton>
+        <ActivityIndicator row="1" #activityIndicator [busy]="loading"
+                           width="50" height="100" class="activity-indicator"></ActivityIndicator>
+        <RadListView id="main-list-container" *ngIf="!loading" [items]="microchips" (itemTap)="addMicrochip()"
+                     pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefresh($event)">
+            <ng-template tkListItemTemplate let-item="item">
+                <CardView class="cardStyle" margin="0 10 10 10" elevation="20" radius="5">
                     <StackLayout>
-                        <Label class="cardLabel cardTitle" textWrap="true" [text]="microchip?.name"></Label>
-                        <!-- <Label class="cardLabel cardSubtitle" [text]="microchip?.description"></Label> -->
-                        <Label class="cardLabel cardSubtitle" text="Descripcion"></Label>
-                        <Label class="cardLabel cardSubtitle labelFocused" [text]="microchip?.ip"></Label>
+                        <Label class="cardLabel cardTitle" textWrap="true" [text]="item.name"></Label>
+                        <Label class="cardLabel cardSubtitle" [text]="item.ip"></Label>
+                        <Label class="cardLabel cardSubtitle" textWrap="true" [text]="item.description"></Label>
                         <GridLayout columns="*, *" orientation="horizontal" verticalAlignment="bottom" width="100%">
                             <Button col="1" class="btn btn-primary" margin="10 10 10 0" text="Details"
-                                    [nsRouterLink]="['/microchips', microchip._id]"></Button>
+                                    [nsRouterLink]="['/microchips', item._id]"></Button>
                         </GridLayout>
                     </StackLayout>
                 </CardView>
             </ng-template>
-        </ListView>
-    </StackLayout>
+        </RadListView>
+        <FAB icon="res://ic_add_white_24dp" rippleColor="#f1f1f1" class="fab-button"
+             [nsRouterLink]="['/microchips', 'add']"></FAB>
+    </GridLayout>
 </RadSideDrawer>

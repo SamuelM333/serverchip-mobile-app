@@ -1,6 +1,5 @@
 // Import the theme’s variables
 @import '../node_modules/nativescript-theme-core/scss/dark';
-
 // Import global colors
 @import "colors";
 
@@ -26,14 +25,13 @@ Page {
   background-color: $background-white;
 }
 
-
-ActionBar {
-  background-color: $header;
-  color: $primary;
+RadListView {
+  height: 100%;
 }
 
-.action-bar{
-  background-color: black;
+ActionBar, .action-bar {
+  background-color: $green;
+  color: $header;
 }
 
 RadSideDrawer {
@@ -41,11 +39,15 @@ RadSideDrawer {
   margin: 0;
 }
 
+#main-list-container {
+  margin-top: 20;
+}
+
 .sideStackLayout {
   background-color: $blue-gray;
 }
 
-.sideTitleStackLayout{
+.sideTitleStackLayout {
   margin-bottom: 20;
   background-color: $green;
 }
@@ -55,8 +57,8 @@ RadSideDrawer {
   font-size: 20;
 }
 
-.sideGreenLabel{
-  color: $green;
+.sideLabel {
+  color: white;
   font-size: 20;
   padding: 15 0 15 25;
 }
@@ -90,12 +92,23 @@ RadSideDrawer {
 
 .mainStackLayout {
   padding: 30 20;
+  height: 100%;
 }
 
 .btn {
   border-radius: 1;
 }
 
-.title{
+.title {
   font-size: 16;
 }
+
+.fab-button {
+  height: 60;
+  width: 60; /// this is required on iOS - Android does not require width so you might need to adjust styles
+  margin: 15;
+  background-color: $green;
+  horizontal-align: right;
+  vertical-align: bottom;
+}
+

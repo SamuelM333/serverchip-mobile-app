@@ -2,23 +2,36 @@
     <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
 </ActionBar>
 
-<StackLayout class="mainStackLayout">
-    <StackLayout orientation="horizontal">
-        <Label class="font-weight-bold" text="Name: "></Label>
-        <Label [text]="microchip?.name"></Label>
+<GridLayout>
+    <StackLayout class="mainStackLayout">
+        <StackLayout orientation="horizontal">
+            <Label class="font-weight-bold" text="Name: "></Label>
+            <Label [text]="microchip?.name"></Label>
+        </StackLayout>
+        <StackLayout orientation="horizontal" *ngIf="microchip?.description">
+            <Label text="Description: "></Label>
+            <Label [text]="microchip?.description"></Label>
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Label class="font-weight-bold" text="IP: "></Label>
+            <Label [text]="microchip?.ip"></Label>
+        </StackLayout>
+        <StackLayout orientation="horizontal" *ngIf="!loading">
+            <Label class="font-weight-bold" text="Owner: "></Label>
+            <Label class="text-capitalize" [text]="microchip?.owner?.name"></Label>
+            <!--<Label class="text-capitalize" [text]="microchip?.owner.last_name"></Label>-->
+        </StackLayout>
+        <StackLayout *ngIf="!loading">
+            <Label class="font-weight-bold" text="Tasks:"></Label>
+            <Label *ngIf="tasks.length === 0" text="This microchip has no tasks"></Label>
+            <GridLayout *ngFor="let task of tasks" columns="*, *" rows="auto" orientation="horizontal"
+                        verticalAlignment="bottom">
+                <Label col="0" [text]="task.name"></Label>
+                <Button col="1" class="btn btn-primary" text="View" [nsRouterLink]="['/tasks', task._id]"></Button>
+            </GridLayout>
+        </StackLayout>
     </StackLayout>
-    <StackLayout orientation="horizontal" *ngIf="microchip?.description">
-        <Label  text="Description: "></Label>
-        <Label [text]="microchip?.description"></Label>
-    </StackLayout>
-    <StackLayout orientation="horizontal">
-        <Label class="font-weight-bold" text="IP: "></Label>
-        <Label [text]="microchip?.ip"></Label>
-    </StackLayout>
-    <StackLayout orientation="horizontal">
-        <Label class="font-weight-bold" text="Owner: "></Label>
-        <Label class="text-capitalize" [text]="microchip?.owner.name"></Label>
-        <Label class="text-capitalize" [text]="microchip?.owner.last_name"></Label>
-    </StackLayout>
-</StackLayout>
+    <FAB icon="res://ic_edit_white_24dp" rippleColor="#f1f1f1" class="fab-button" (tap)="onEdit()"
+         [nsRouterLink]="['/microchips', 'edit', id]"></FAB>
+</GridLayout>
 
